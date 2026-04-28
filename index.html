@@ -5,186 +5,192 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARRA Fundraising Event</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --primary:#0b3c5d;
+  --gold:#d4af37;
+}
+
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f4f6f9;
-  color: #1a1a1a;
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f5f7fa;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+header {
+  position:sticky;
+  top:0;
+  background:white;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  z-index:1000;
 }
 
-.hero {
-  background: linear-gradient(135deg, #0b3c5d, #123d6b);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.9;
+header a {
+  text-decoration:none;
+  color:var(--primary);
+  font-weight:600;
 }
 
 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #d4af37;
-  color: black;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
+  background:var(--primary);
+  color:white;
+  padding:10px 18px;
+  border-radius:5px;
+}
+
+.hero {
+  height:90vh;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('image1.jpg');
+  background-size:cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.hero h1 {
+  font-size:48px;
+  font-family:'Playfair Display';
 }
 
 .section {
-  margin: 50px 0;
-}
-
-.section h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-img {
-  width: 100%;
-  border-radius: 10px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-.form input, .form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
+.gallery img {
+  width:100%;
+  border-radius:10px;
 }
 
-.form button {
-  background: #0b3c5d;
-  color: white;
-  border: none;
-  cursor: pointer;
+.countdown {
+  font-size:28px;
+  text-align:center;
+  color:var(--primary);
+  margin-top:20px;
 }
 
-.footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 14px;
-  opacity: 0.7;
+iframe {
+  width:100%;
+  border:none;
+  border-radius:10px;
 }
 
-/* Mobile */
-@media(max-width: 768px){
-  .grid {
-    grid-template-columns: 1fr;
-  }
+form input, form button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+}
 
-  .hero h1 {
-    font-size: 30px;
-  }
+form button {
+  background:var(--primary);
+  color:white;
+  border:none;
+}
+
+footer {
+  text-align:center;
+  padding:30px;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .hero h1 {font-size:32px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <h1>ARRA Fundraising Event</h1>
-  <p>May 1, 2026 | 5:30 – 8:30 PM</p>
-  <p>Scottsdale, Arizona</p>
-  <a href="#rsvp" class="btn">Register Now</a>
-</div>
+<header>
+  <div><strong>ARRA</strong></div>
+  <a href="#rsvp" class="btn">Register</a>
+</header>
 
-<div class="container">
+<section class="hero">
+  <div>
+    <h1>Invest in Your Health</h1>
+    <p>May 1, 2026 | Scottsdale, AZ</p>
+    <a href="#rsvp" class="btn">RSVP Now</a>
 
-  <!-- About -->
-  <div class="section">
-    <h2>About ARRA</h2>
-    <p>
-      Age Reversal Research Alliance (ARRA) is a 501(c)(3) organization focused on
-      advanced therapies for neurological recovery, longevity, and regenerative medicine.
-    </p>
+    <div class="countdown" id="countdown"></div>
   </div>
+</section>
 
-  <!-- Images -->
-  <div class="section grid">
-    <img src="image1.jpg" alt="Programs">
-    <img src="image2.jpg" alt="Therapies">
+<section class="section">
+  <h2>About ARRA</h2>
+  <p>Age Reversal Research Alliance focuses on neurological recovery, longevity, and regenerative medicine.</p>
+</section>
+
+<section class="section">
+  <h2>Core Programs</h2>
+  <div class="grid">
+    <div class="card">Alzheimer’s / Parkinson’s Programs</div>
+    <div class="card">TBI / PTSD Recovery</div>
+    <div class="card">Longevity & Healthspan</div>
+    <div class="card">Regenerative Medicine</div>
   </div>
+</section>
 
-  <!-- Programs -->
-  <div class="section">
-    <h2>Core Programs</h2>
+<section class="section gallery grid">
+  <img src="image1.jpg">
+  <img src="image2.jpg">
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Neurological Recovery</h3>
-        <p>Alzheimer’s, Parkinson’s, TBI, PTSD, ADHD, Autism programs.</p>
-      </div>
+<section class="section">
+  <h2>Event Location</h2>
+  <iframe src="https://www.google.com/maps?q=9362+E+Raintree+Dr,+Scottsdale&output=embed" height="300"></iframe>
+</section>
 
-      <div class="card">
-        <h3>Longevity & Healthspan</h3>
-        <p>30–90 day rejuvenation protocols and biological age reversal.</p>
-      </div>
+<section class="section" id="rsvp">
+  <h2>RSVP</h2>
 
-      <div class="card">
-        <h3>Regenerative Medicine</h3>
-        <p>Stem cells, exosomes, PRP, peptide therapy.</p>
-      </div>
+  <!-- Replace with Google Form -->
+  <iframe src="YOUR_GOOGLE_FORM_LINK" height="500"></iframe>
 
-      <div class="card">
-        <h3>Diagnostics</h3>
-        <p>Genetic testing, biomarkers, hormone panels, microbiome analysis.</p>
-      </div>
-    </div>
-  </div>
+</section>
 
-  <!-- Event Details -->
-  <div class="section">
-    <h2>Event Location</h2>
-    <iframe 
-      src="https://www.google.com/maps?q=9362+E+Raintree+Dr,+Scottsdale&output=embed"
-      width="100%" height="300" style="border:0;"></iframe>
-  </div>
-
-  <!-- RSVP -->
-  <div class="section" id="rsvp">
-    <h2>RSVP</h2>
-
-    <!-- Replace with your Google Form -->
-    <iframe src="YOUR_GOOGLE_FORM_LINK" width="100%" height="500"></iframe>
-
-  </div>
-
-</div>
-
-<div class="footer">
+<footer>
   © 2026 ARRA | Age Reversal Research Alliance
-</div>
+</footer>
+
+<script>
+// Countdown Timer
+const eventDate = new Date("May 1, 2026 17:30:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = eventDate - now;
+
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+
+  document.getElementById("countdown").innerHTML =
+    `${d}d ${h}h ${m}m remaining`;
+}, 1000);
+</script>
 
 </body>
 </html>
