@@ -1,196 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ARRA Fundraising Event</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --primary: #0b2c4d;
-    --accent: #1fa3b1;
-    --gold: #caa34a;
-    --bg: #f5f8fb;
+
+:root{
+--primary:#0b2c4d;
+--accent:#1fa3b1;
+--gold:#caa34a;
+--glass:rgba(255,255,255,0.08);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Poppins;
+background:linear-gradient(135deg,#0b2c4d,#020c18);
+color:#fff;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg);
-    color: #222;
+/* LAYOUT */
+.container{max-width:1200px;margin:auto;padding:30px}
+
+/* HERO */
+.hero{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:40px;
+align-items:center;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+.logo{
+font-family:Playfair Display;
+font-size:40px;
+color:var(--gold);
 }
 
-/* HEADER */
-.header {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 30px;
-    align-items: center;
+.subtitle{font-size:12px;letter-spacing:2px}
+
+h1{
+font-size:52px;
+line-height:1.2;
 }
 
-.logo {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 32px;
-    font-weight: 700;
+h1 span{color:var(--accent)}
+
+.hero-card{
+margin-top:20px;
+padding:20px;
+background:var(--glass);
+backdrop-filter:blur(14px);
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.2);
 }
 
-.subtitle {
-    font-size: 12px;
-    letter-spacing: 1px;
+.info-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:15px;
 }
 
-.hero h1 {
-    font-size: 48px;
-    color: var(--primary);
-    line-height: 1.2;
+.info{
+background:rgba(0,0,0,0.3);
+padding:15px;
+border-radius:10px;
 }
 
-.hero h1 span {
-    color: var(--accent);
+/* IMAGE */
+.visual{
+height:520px;
+background:url('your-brain-image.png') center/cover;
+border-radius:20px;
+position:relative;
+overflow:hidden;
 }
 
-.hero p {
-    margin-top: 15px;
-    font-size: 16px;
+.visual::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);
 }
 
-.highlight {
-    color: var(--gold);
-    font-style: italic;
+/* CTA */
+.cta{
+margin-top:20px;
+display:flex;
+gap:10px;
 }
 
-/* IMAGE SIDE */
-.image-box {
-    background: url('your-image.png') center/cover no-repeat;
-    height: 500px;
-    border-radius: 20px;
+button{
+padding:12px 18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
 }
 
-/* INFO BOX */
-.info-box {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
+.primary{background:var(--gold);color:#000}
+.secondary{background:transparent;border:1px solid #fff;color:#fff}
+
+/* COUNTDOWN */
+.countdown{
+display:flex;
+gap:10px;
+margin-top:15px;
 }
 
-.card {
-    flex: 1;
-    background: var(--primary);
-    color: white;
-    padding: 20px;
-    border-radius: 12px;
+.timer-box{
+background:var(--glass);
+padding:10px;
+border-radius:8px;
+text-align:center;
 }
 
-.card h3 {
-    font-size: 18px;
+/* TIMELINE */
+.timeline{
+margin-top:50px;
 }
 
-.card p {
-    margin-top: 5px;
-}
-
-/* CENTER MESSAGE */
-.center-msg {
-    margin: 40px 0;
-    text-align: center;
-}
-
-.circle {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 25px;
-    border-radius: 50%;
-    font-size: 14px;
-    max-width: 200px;
-}
-
-/* ABOUT */
-.about {
-    background: var(--primary);
-    color: white;
-    padding: 25px;
-    border-radius: 10px;
+.timeline-item{
+padding:15px;
+border-left:2px solid var(--accent);
+margin-bottom:10px;
 }
 
 /* PROGRAMS */
-.programs {
-    margin-top: 30px;
-    text-align: center;
+.section{
+margin-top:50px;
 }
 
-.programs h2 {
-    margin-bottom: 20px;
-    color: var(--primary);
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
-.program-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
+.card{
+background:var(--glass);
+padding:20px;
+border-radius:15px;
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.15);
 }
 
-.program {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 13px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+/* MAP */
+.map{
+margin-top:40px;
+height:350px;
+border-radius:15px;
+overflow:hidden;
 }
 
 /* FOOTER */
-.footer {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.rsvp {
-    background: var(--primary);
-    color: white;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.feature {
-    text-align: center;
-    font-size: 12px;
+.footer{
+margin-top:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
 }
 
 /* RESPONSIVE */
-@media(max-width: 900px) {
-    .header {
-        grid-template-columns: 1fr;
-    }
-    .program-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .footer {
-        grid-template-columns: 1fr;
-    }
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
+.footer{grid-template-columns:1fr}
+.info-grid{grid-template-columns:1fr}
 }
+
 </style>
 </head>
 
@@ -198,93 +182,180 @@ body {
 
 <div class="container">
 
-<!-- HEADER -->
-<div class="header">
-    <div class="hero">
-        <div class="logo">ARRA</div>
-        <div class="subtitle">AGE REVERSAL RESEARCH ALLIANCE</div>
+<!-- HERO -->
+<div class="hero">
 
-        <h1>Invest in <br><span>Your Health</span></h1>
+<div>
+<div class="logo">ARRA</div>
+<div class="subtitle">AGE REVERSAL RESEARCH ALLIANCE</div>
 
-        <p>
-            You are invited by the <b>Age Reversal Research Alliance</b>  
-            to a <span class="highlight">Fundraising Event</span>
-        </p>
+<h1>Invest in <span>Your Health</span></h1>
 
-        <div class="info-box">
-            <div class="card">
-                <h3>Date</h3>
-                <p>Friday, May 1st, 2026</p>
-            </div>
-            <div class="card">
-                <h3>Time</h3>
-                <p>5:30 – 8:30 PM</p>
-            </div>
-            <div class="card">
-                <h3>Location</h3>
-                <p>9362 E Raintree Dr, Scottsdale, AZ</p>
-            </div>
-        </div>
-    </div>
+<div class="hero-card">
+<p>You are invited to a <b>Fundraising Event</b></p>
 
-    <div class="image-box"></div>
+<div class="info-grid">
+<div class="info">May 1, 2026</div>
+<div class="info">5:30 – 8:30 PM</div>
+<div class="info">Scottsdale, AZ</div>
 </div>
 
-<!-- CENTER MESSAGE -->
-<div class="center-msg">
-    <div class="circle">
-        TOGETHER, WE CAN<br><b>BUILD A HEALTHIER TOMORROW</b>
-    </div>
+<div class="countdown" id="countdown"></div>
+
+<div class="cta">
+<button class="primary" onclick="window.open('YOUR_GOOGLE_FORM_LINK')">Reserve Seat</button>
+<button class="secondary">Learn More</button>
+</div>
 </div>
 
-<!-- ABOUT -->
-<div class="about">
-    As a <b>501(c)(3)</b> organization, our facility is dedicated to providing
-    evidence-based therapies to individuals including Veterans,
-    First Responders, and Native Americans.
+</div>
+
+<div class="visual"></div>
+
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline">
+<h2>Event Schedule</h2>
+
+<div class="timeline-item">5:30 PM – Welcome & Networking</div>
+<div class="timeline-item">6:00 PM – ARRA Introduction</div>
+<div class="timeline-item">6:30 PM – Therapy Showcase</div>
+<div class="timeline-item">7:30 PM – Q&A</div>
+<div class="timeline-item">8:00 PM – Closing</div>
+
 </div>
 
 <!-- PROGRAMS -->
-<div class="programs">
-    <h2>Our Evidence-Based Therapies & Programs</h2>
+<div class="section">
+<h2>Core Clinical Modalities</h2>
 
-    <div class="program-grid">
-        <div class="program">Alzheimer’s Disease</div>
-        <div class="program">Parkinson’s Disease</div>
-        <div class="program">TBI</div>
-        <div class="program">PTSD</div>
-        <div class="program">Autism</div>
-        <div class="program">ADHD</div>
-        <div class="program">Longevity</div>
-        <div class="program">Oxygen Therapy</div>
-        <div class="program">Regenerative Medicine</div>
-    </div>
+<div class="grid">
+
+<div class="card">
+<h3>Oxygen & Cellular Therapies</h3>
+<p>HBOT, EBOO, Ozone Therapy, Hydrogen Therapy</p>
+</div>
+
+<div class="card">
+<h3>Brain Optimization</h3>
+<p>EEG Mapping, Neurofeedback, TMS, tDCS, Vagus Nerve Stimulation</p>
+</div>
+
+<div class="card">
+<h3>Regenerative Medicine</h3>
+<p>Stem Cells, Exosomes, PRP, NAD+ Therapy</p>
+</div>
+
+<div class="card">
+<h3>IV & Injectable Medicine</h3>
+<p>Vitamin IV, Glutathione, Amino acids, Anti-inflammatory protocols</p>
+</div>
+
+<div class="card">
+<h3>Diagnostics</h3>
+<p>Genetic testing, Biomarkers, Microbiome analysis</p>
+</div>
+
+<div class="card">
+<h3>Recovery Modalities</h3>
+<p>Red light therapy, Cryotherapy, Infrared Sauna, PEMF</p>
+</div>
+
+</div>
+</div>
+
+<!-- PROGRAMS 2 -->
+<div class="section">
+<h2>Programs & Protocols</h2>
+
+<div class="grid">
+
+<div class="card">
+Neurological Programs<br>
+TBI / PTSD Recovery, Alzheimer’s, ADHD / Autism
+</div>
+
+<div class="card">
+Longevity Programs<br>
+30 / 60 / 90-day rejuvenation, Biological Age Reversal
+</div>
+
+<div class="card">
+Humanitarian Programs<br>
+Free / subsidized therapy for veterans & responders
+</div>
+
+<div class="card">
+Supplements Ecosystem<br>
+NAD+, peptides, nootropics, gut health
+</div>
+
+<div class="card">
+Devices<br>
+Red light panels, PEMF mats, hyperbaric chambers
+</div>
+
+<div class="card">
+Retreats & Events<br>
+Immersive healing programs
+</div>
+
+</div>
+</div>
+
+<!-- MAP -->
+<div class="map">
+<iframe width="100%" height="100%" frameborder="0"
+src="https://maps.google.com/maps?q=9362%20E%20Raintree%20Dr,%20Scottsdale&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    <div>
-        <p>
-            We welcome you to explore everything we are building to support
-            optimal health and wellness.
-        </p>
 
-        <div class="features">
-            <div class="feature">Science Driven</div>
-            <div class="feature">Trust & Integrity</div>
-            <div class="feature">Community Focused</div>
-            <div class="feature">Future Healing</div>
-        </div>
-    </div>
+<div class="card">
+<h3>About ARRA</h3>
+<p>
+501(c)(3) organization delivering evidence-based therapies
+for neurological recovery, longevity, and regenerative medicine.
+</p>
+</div>
 
-    <div class="rsvp">
-        <h3>RSVP</h3>
-        <p>Email: clinton.hughes@asu.edu</p>
-        <p>Phone: 480 749 5180</p>
-    </div>
+<div class="card">
+<h3>Contact</h3>
+<p>Email: cfhughes@asu.edu</p>
+<p>Phone: 480 749 5180</p>
 </div>
 
 </div>
+
+</div>
+
+<script>
+
+const targetDate = new Date("May 1, 2026 17:30:00").getTime();
+
+setInterval(()=>{
+const now = new Date().getTime();
+const diff = targetDate - now;
+
+const d = Math.floor(diff / (1000*60*60*24));
+const h = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
+const m = Math.floor((diff % (1000*60*60))/(1000*60));
+const s = Math.floor((diff % (1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+`
+<div class="timer-box">${d}d</div>
+<div class="timer-box">${h}h</div>
+<div class="timer-box">${m}m</div>
+<div class="timer-box">${s}s</div>
+`;
+
+},1000);
+
+</script>
 
 </body>
 </html>
