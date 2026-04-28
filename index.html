@@ -1,196 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ARRA Fundraising Event</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --primary:#0b3c5d;
-  --gold:#d4af37;
+    --primary: #0b2c4d;
+    --accent: #1fa3b1;
+    --gold: #caa34a;
+    --bg: #f5f8fb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#f5f7fa;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: #222;
 }
 
-header {
-  position:sticky;
-  top:0;
-  background:white;
-  padding:10px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  z-index:1000;
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
-header a {
-  text-decoration:none;
-  color:var(--primary);
-  font-weight:600;
+/* HEADER */
+.header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    align-items: center;
 }
 
-.btn {
-  background:var(--primary);
-  color:white;
-  padding:10px 18px;
-  border-radius:5px;
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 32px;
+    font-weight: 700;
 }
 
-.hero {
-  height:90vh;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('image1.jpg');
-  background-size:cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
+.subtitle {
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
 .hero h1 {
-  font-size:48px;
-  font-family:'Playfair Display';
+    font-size: 48px;
+    color: var(--primary);
+    line-height: 1.2;
 }
 
-.section {
-  padding:60px 20px;
-  max-width:1100px;
-  margin:auto;
+.hero h1 span {
+    color: var(--accent);
 }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.hero p {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.highlight {
+    color: var(--gold);
+    font-style: italic;
+}
+
+/* IMAGE SIDE */
+.image-box {
+    background: url('your-image.png') center/cover no-repeat;
+    height: 500px;
+    border-radius: 20px;
+}
+
+/* INFO BOX */
+.info-box {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
 }
 
 .card {
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    flex: 1;
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
 }
 
-.gallery img {
-  width:100%;
-  border-radius:10px;
+.card h3 {
+    font-size: 18px;
 }
 
-.countdown {
-  font-size:28px;
-  text-align:center;
-  color:var(--primary);
-  margin-top:20px;
+.card p {
+    margin-top: 5px;
 }
 
-iframe {
-  width:100%;
-  border:none;
-  border-radius:10px;
+/* CENTER MESSAGE */
+.center-msg {
+    margin: 40px 0;
+    text-align: center;
 }
 
-form input, form button {
-  width:100%;
-  padding:12px;
-  margin-top:10px;
+.circle {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 25px;
+    border-radius: 50%;
+    font-size: 14px;
+    max-width: 200px;
 }
 
-form button {
-  background:var(--primary);
-  color:white;
-  border:none;
+/* ABOUT */
+.about {
+    background: var(--primary);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
 }
 
-footer {
-  text-align:center;
-  padding:30px;
-  font-size:14px;
+/* PROGRAMS */
+.programs {
+    margin-top: 30px;
+    text-align: center;
 }
 
-@media(max-width:768px){
-  .hero h1 {font-size:32px;}
+.programs h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.program {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.rsvp {
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.feature {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .header {
+        grid-template-columns: 1fr;
+    }
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div><strong>ARRA</strong></div>
-  <a href="#rsvp" class="btn">Register</a>
-</header>
+<div class="container">
 
-<section class="hero">
-  <div>
-    <h1>Invest in Your Health</h1>
-    <p>May 1, 2026 | Scottsdale, AZ</p>
-    <a href="#rsvp" class="btn">RSVP Now</a>
+<!-- HEADER -->
+<div class="header">
+    <div class="hero">
+        <div class="logo">ARRA</div>
+        <div class="subtitle">AGE REVERSAL RESEARCH ALLIANCE</div>
 
-    <div class="countdown" id="countdown"></div>
-  </div>
-</section>
+        <h1>Invest in <br><span>Your Health</span></h1>
 
-<section class="section">
-  <h2>About ARRA</h2>
-  <p>Age Reversal Research Alliance focuses on neurological recovery, longevity, and regenerative medicine.</p>
-</section>
+        <p>
+            You are invited by the <b>Age Reversal Research Alliance</b>  
+            to a <span class="highlight">Fundraising Event</span>
+        </p>
 
-<section class="section">
-  <h2>Core Programs</h2>
-  <div class="grid">
-    <div class="card">Alzheimer’s / Parkinson’s Programs</div>
-    <div class="card">TBI / PTSD Recovery</div>
-    <div class="card">Longevity & Healthspan</div>
-    <div class="card">Regenerative Medicine</div>
-  </div>
-</section>
+        <div class="info-box">
+            <div class="card">
+                <h3>Date</h3>
+                <p>Friday, May 1st, 2026</p>
+            </div>
+            <div class="card">
+                <h3>Time</h3>
+                <p>5:30 – 8:30 PM</p>
+            </div>
+            <div class="card">
+                <h3>Location</h3>
+                <p>9362 E Raintree Dr, Scottsdale, AZ</p>
+            </div>
+        </div>
+    </div>
 
-<section class="section gallery grid">
-  <img src="image1.jpg">
-  <img src="image2.jpg">
-</section>
+    <div class="image-box"></div>
+</div>
 
-<section class="section">
-  <h2>Event Location</h2>
-  <iframe src="https://www.google.com/maps?q=9362+E+Raintree+Dr,+Scottsdale&output=embed" height="300"></iframe>
-</section>
+<!-- CENTER MESSAGE -->
+<div class="center-msg">
+    <div class="circle">
+        TOGETHER, WE CAN<br><b>BUILD A HEALTHIER TOMORROW</b>
+    </div>
+</div>
 
-<section class="section" id="rsvp">
-  <h2>RSVP</h2>
+<!-- ABOUT -->
+<div class="about">
+    As a <b>501(c)(3)</b> organization, our facility is dedicated to providing
+    evidence-based therapies to individuals including Veterans,
+    First Responders, and Native Americans.
+</div>
 
-  <!-- Replace with Google Form -->
-  <iframe src="YOUR_GOOGLE_FORM_LINK" height="500"></iframe>
+<!-- PROGRAMS -->
+<div class="programs">
+    <h2>Our Evidence-Based Therapies & Programs</h2>
 
-</section>
+    <div class="program-grid">
+        <div class="program">Alzheimer’s Disease</div>
+        <div class="program">Parkinson’s Disease</div>
+        <div class="program">TBI</div>
+        <div class="program">PTSD</div>
+        <div class="program">Autism</div>
+        <div class="program">ADHD</div>
+        <div class="program">Longevity</div>
+        <div class="program">Oxygen Therapy</div>
+        <div class="program">Regenerative Medicine</div>
+    </div>
+</div>
 
-<footer>
-  © 2026 ARRA | Age Reversal Research Alliance
-</footer>
+<!-- FOOTER -->
+<div class="footer">
+    <div>
+        <p>
+            We welcome you to explore everything we are building to support
+            optimal health and wellness.
+        </p>
 
-<script>
-// Countdown Timer
-const eventDate = new Date("May 1, 2026 17:30:00").getTime();
+        <div class="features">
+            <div class="feature">Science Driven</div>
+            <div class="feature">Trust & Integrity</div>
+            <div class="feature">Community Focused</div>
+            <div class="feature">Future Healing</div>
+        </div>
+    </div>
 
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = eventDate - now;
+    <div class="rsvp">
+        <h3>RSVP</h3>
+        <p>Email: clinton.hughes@asu.edu</p>
+        <p>Phone: 480 749 5180</p>
+    </div>
+</div>
 
-  const d = Math.floor(diff / (1000*60*60*24));
-  const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  const m = Math.floor((diff % (1000*60*60)) / (1000*60));
-
-  document.getElementById("countdown").innerHTML =
-    `${d}d ${h}h ${m}m remaining`;
-}, 1000);
-</script>
+</div>
 
 </body>
 </html>
